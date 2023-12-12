@@ -21,7 +21,6 @@ class UserRegisterVm extends _$UserRegisterVm {
     required String email,
     required String password,
   }) async {
-    final loaderHandle = AsyncLoaderHandler()..start();
     final userRegisterAdmService = ref.watch(userRegisterAdmServiceProvider);
 
     final userData = (
@@ -30,7 +29,8 @@ class UserRegisterVm extends _$UserRegisterVm {
       password: password,
     );
 
-    final registerResult = await userRegisterAdmService.execute(userData);
+    final registerResult =
+        await userRegisterAdmService.execute(userData).asyncLoader();
 
     switch (registerResult) {
       case Success():
@@ -40,7 +40,5 @@ class UserRegisterVm extends _$UserRegisterVm {
         state = UserRegisterStateStatus.error;
         break;
     }
-
-    loaderHandle.close();
   }
 }
