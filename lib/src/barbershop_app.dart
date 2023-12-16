@@ -22,7 +22,7 @@ class BarbershopApp extends StatelessWidget {
           navigatorObservers: [asyncNavigatorObserver],
           navigatorKey: BarbershopNavGlobalKey.instance.navKey,
           routes: {
-            '/': (_) => const BarbershopRegisterPage(),
+            '/': (_) => const SplashPage(),
             '/auth/login': (_) => const LoginPage(),
             '/auth/register/user': (_) => const UserRegisterPage(),
             '/auth/register/barbershop': (_) => const BarbershopRegisterPage(),

@@ -45,7 +45,7 @@ class BarbershopRepositoryImpl implements BarbershopRepository {
         'user_id': '#userAuthRef',
         'name': data.name,
         'email': data.email,
-        'opening_dadys': data.openingDays,
+        'opening_days': data.openingDays,
         'opening_hours': data.openingHours,
       });
 
